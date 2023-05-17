@@ -1,4 +1,3 @@
-﻿using logocrm.net.common.Log;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,7 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace logocrm.net.common.Extensions
+namespace ExtensionProject.common.Extensions
 {
     /// <summary>
     /// common extentions

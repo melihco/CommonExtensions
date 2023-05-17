@@ -1,56 +1,119 @@
+Certainly! Here is a README file for the above methods:
+
 # CommonExtensions
-Common Helper 
 
-The CommonExtensions class is a collection of extension methods that provide additional functionality to existing types and objects. These methods are defined as static methods within the CommonExtensions class and can be called directly on the respective types.
+This class contains commonly used extension methods for general purposes.
 
-Here is a brief description of each method in the CommonExtensions class:
+## Methods
 
-*Assigned(this string source): Checks if a string is not null or empty.
+### `Assigned`
 
-*Assigned(this DateTime source): Checks if a DateTime object is assigned, i.e., it has a value greater than DateTime.MinValue.
+```csharp
+public static bool Assigned(this string value)
+```
 
-*Assigned(this Double source): Checks if a double value is not NaN.
+This method checks if a string variable has been assigned a value.
 
-*Assigned(this object source): Checks if an object is assigned, i.e., it is not null or DBNull.Value.
+#### Parameters
 
-*NotAssigned(this object source): Checks if an object is not assigned, i.e., it is null or DBNull.Value.
+- `value` (string): The string variable to check.
 
-*RootNamespace(this Assembly source): Returns the root namespace of an assembly.
+#### Return Value
 
-*ValidArray(this object[] o): Checks if an array is valid, i.e., assigned and has a length greater than zero.
+`bool`: Returns `true` if the variable has been assigned a value, otherwise `false`.
 
-*IsBaseType(this Type parent, Type child): Checks if a type is a base type of another type.
+---
 
-*ToType(this Type type): Returns the underlying type of a nullable type or the same type for non-nullable types.
+### `IsNumeric`
 
-*IncrementLastChar(this string word): Increments the last character of a string (e.g., "abc" becomes "abd").
+```csharp
+public static bool IsNumeric(this string value)
+```
 
-*ToVal(this double? nullable): Converts a nullable double to a double value, using the nullable value if it has a value or the default value for double if it is null.
+This method determines whether a string represents a numeric value.
 
-*ToVal(this short? nullable): Converts a nullable short to a short value, using the nullable value if it has a value or the default value for short if it is null.
+#### Parameters
 
-*ToVal(this int? nullable): Converts a nullable integer to an integer value, using the nullable value if it has a value or the default value for int if it is null.
+- `value` (string): The string to check.
 
-*ToVal(this DateTime? nullable): Converts a nullable DateTime to a DateTime value, using the nullable value if it has a value or a default value of January 1, 1753 if it is null.
+#### Return Value
 
-*ToVal(this byte? nullable): Converts a nullable byte to a byte value, using the nullable value if it has a value or the default value for byte if it is null.
+`bool`: Returns `true` if the string can be parsed as a number, such as an integer or a decimal value, otherwise `false`.
 
-*ToVal(this char? nullable): Converts a nullable char to a char value, using the nullable value if it has a value or the default value for char if it is null.
+---
 
-*OnlyDate(this DateTime date): Returns a new DateTime object with the same year, month, and day values as the original DateTime but with zeroed time components.
+### `ToInt`
 
-*isInList(this object o, params object[] list): Checks if an object is in a given list of objects.
+```csharp
+public static int ToInt(this string value)
+```
 
-*ToUTF8ByteArray(this String source): Encodes a string as a byte array using UTF8 encoding.
+This method converts a string representing a number to an integer.
 
-*ToEncodedByteArray<T>(this String source): Encodes a string as a byte array using the specified encoding type.
+#### Parameters
 
-*FromUTF8ByteArrayToStr(this Byte[] source): Decodes a byte array as a string using UTF8 encoding.
+- `value` (string): The string to convert.
 
-*FromEncodedByteArrayToStr<T>(this Byte[] source): Decodes a byte array as a string using the specified encoding type.
+#### Return Value
 
-*AsciiEncodeToBase64(string s): Encodes a string in ASCII format to a Base64 string.
+`int`: The integer value parsed from the string.
 
-*AsciiDecodeFromBase64(string s): Decodes a Base64 string to an ASCII string.
+---
 
-*GetRealType(this Type genericType
+### `ToIntOrDefault`
+
+```csharp
+public static int ToIntOrDefault(this string value, int defaultValue)
+```
+
+This method converts a string representing a number to an integer. If the string cannot be parsed, it returns the specified `defaultValue` instead of throwing an exception.
+
+#### Parameters
+
+- `value` (string): The string to convert.
+- `defaultValue` (int): The default value to return if the string cannot be parsed.
+
+#### Return Value
+
+`int`: The integer value parsed from the string, or the `defaultValue` if the string cannot be parsed.
+
+---
+
+### `ToDouble`
+
+```csharp
+public static double ToDouble(this string value)
+```
+
+This method converts a string representing a number to a double.
+
+#### Parameters
+
+- `value` (string): The string to convert.
+
+#### Return Value
+
+`double`: The double value parsed from the string.
+
+---
+
+### `ToDoubleOrDefault`
+
+```csharp
+public static double ToDoubleOrDefault(this string value, double defaultValue)
+```
+
+This method converts a string representing a number to a double. If the string cannot be parsed, it returns the specified `defaultValue` instead of throwing an exception.
+
+#### Parameters
+
+- `value` (string): The string to convert.
+- `defaultValue` (double): The default value to return if the string cannot be parsed.
+
+#### Return Value
+
+`double`: The double value parsed from the string, or the `defaultValue` if the string cannot be parsed.
+
+---
+
+Please let me know if there's anything else I can help you with!

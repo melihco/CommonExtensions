@@ -1,121 +1,3 @@
-Certainly! Here is a README file for the above methods:
-
-# CommonExtensions
-
-This class contains commonly used extension methods for general purposes.
-
-## Methods
-
-### `Assigned`
-
-```csharp
-public static bool Assigned(this string value)
-```
-
-This method checks if a string variable has been assigned a value.
-
-#### Parameters
-
-- `value` (string): The string variable to check.
-
-#### Return Value
-
-`bool`: Returns `true` if the variable has been assigned a value, otherwise `false`.
-
----
-
-### `IsNumeric`
-
-```csharp
-public static bool IsNumeric(this string value)
-```
-
-This method determines whether a string represents a numeric value.
-
-#### Parameters
-
-- `value` (string): The string to check.
-
-#### Return Value
-
-`bool`: Returns `true` if the string can be parsed as a number, such as an integer or a decimal value, otherwise `false`.
-
----
-
-### `ToInt`
-
-```csharp
-public static int ToInt(this string value)
-```
-
-This method converts a string representing a number to an integer.
-
-#### Parameters
-
-- `value` (string): The string to convert.
-
-#### Return Value
-
-`int`: The integer value parsed from the string.
-
----
-
-### `ToIntOrDefault`
-
-```csharp
-public static int ToIntOrDefault(this string value, int defaultValue)
-```
-
-This method converts a string representing a number to an integer. If the string cannot be parsed, it returns the specified `defaultValue` instead of throwing an exception.
-
-#### Parameters
-
-- `value` (string): The string to convert.
-- `defaultValue` (int): The default value to return if the string cannot be parsed.
-
-#### Return Value
-
-`int`: The integer value parsed from the string, or the `defaultValue` if the string cannot be parsed.
-
----
-
-### `ToDouble`
-
-```csharp
-public static double ToDouble(this string value)
-```
-
-This method converts a string representing a number to a double.
-
-#### Parameters
-
-- `value` (string): The string to convert.
-
-#### Return Value
-
-`double`: The double value parsed from the string.
-
----
-
-### `ToDoubleOrDefault`
-
-```csharp
-public static double ToDoubleOrDefault(this string value, double defaultValue)
-```
-
-This method converts a string representing a number to a double. If the string cannot be parsed, it returns the specified `defaultValue` instead of throwing an exception.
-
-#### Parameters
-
-- `value` (string): The string to convert.
-- `defaultValue` (double): The default value to return if the string cannot be parsed.
-
-#### Return Value
-
-`double`: The double value parsed from the string, or the `defaultValue` if the string cannot be parsed.
-
----
-
 # Common Extensions
 
 This is a collection of common extensions for various data types and classes in C#.
@@ -132,6 +14,19 @@ This is a collection of common extensions for various data types and classes in 
 - [IEnumerable Extensions](#ienumerable-extensions)
 - [String Manipulation Extensions](#string-manipulation-extensions)
 - [Type Checking Extensions](#type-checking-extensions)
+- [Other Extensions](#other-extensions)
+- [Boolean Extensions](#boolean-extensions)
+- [Numeric Extensions](#numeric-extensions)
+- [DateTime Extensions](#datetime-extensions)
+- [Type Extensions](#type-extensions)
+- [String Extensions](#string-extensions)
+- [Guid Extensions](#guid-extensions)
+- [String Manipulation Extensions](#string-manipulation-extensions)
+- [Process Extensions](#process-extensions)
+- [Exception Extensions](#exception-extensions)
+- [Encoding Extensions](#encoding-extensions)
+- [Xml Extensions](#xml-extensions)
+- [IDisposable Extensions](#idisposable-extensions)
 - [Other Extensions](#other-extensions)
 
 ## String Extensions
@@ -196,4 +91,78 @@ This is a collection of common extensions for various data types and classes in 
 
 - `IsAlphaNumeric()`: Checks if a type is a char or string.
 - `IsPrimitiveNumericOrString.
+
+## Boolean Extensions
+
+- `IsBoolean(this Type dataType)`: Checks if the type is a boolean type.
+
+## Numeric Extensions
+
+- `IsNumeric(this Type dataType)`: Checks if the type is a numeric type.
+- `IsFloating(this Type dataType)`: Checks if the type is a floating-point numeric type.
+
+## DateTime Extensions
+
+- `IsDateTime(this Type dataType)`: Checks if the type is DateTime.
+- `CropMilliSeconds(this DateTime source)`: Truncates the milliseconds part of a DateTime object.
+- `CropMilliSeconds(this DateTimeOffset source)`: Truncates the milliseconds part of a DateTimeOffset object.
+- `CropSeconds(this DateTime source)`: Truncates the seconds and milliseconds part of a DateTime object.
+- `CropSeconds(this DateTimeOffset source)`: Truncates the seconds and milliseconds part of a DateTimeOffset object.
+- `CropMinutes(this DateTime source)`: Truncates the minutes, seconds, and milliseconds part of a DateTime object.
+- `CropMinutes(this DateTimeOffset source)`: Truncates the minutes, seconds, and milliseconds part of a DateTimeOffset object.
+
+## Type Extensions
+
+- `IsInterfaceSupported(this Type srcType, Type intfType)`: Checks if the source type implements a specific interface.
+
+## String Extensions
+
+- `ReverseString(this string str)`: Reverses the characters in a string.
+- `ReturnAbsolutePath(this string app)`: Returns the absolute path of a URL, without the last slash if the app is a URL.
+- `ValidateEmail(this string email)`: Validates if a string is a valid email address.
+
+## Guid Extensions
+
+- `ToGUID(this string guidStr)`: Converts a string to a GUID.
+
+## String Manipulation Extensions
+
+- No methods provided.
+
+## Process Extensions
+
+- `GetCurrentProcessID()`: Gets the ID of the current process.
+- `GetCurrentProcessIdentityName()`: Gets the name of the current process's identity.
+- `GetCurrentProcessName()`: Gets the name of the current process.
+- `GetMachineName()`: Gets the name of the current machine.
+- `GetMachineDomainName()`: Gets the domain name of the current machine.
+- `GetHostIPv4Address(string hostName = "")`: Gets the IPv4 address of a given hostname.
+- `TryGetProcess(int pid, out Process process)`: Tries to get a process with the specified ID.
+- `ProcessIsRunning(int pid)`: Checks if a process with the specified ID is running.
+- `GetRunningProcess(int pid)`: Gets a running process with the specified ID.
+- `ProcessHasExited(Process process, Boolean throwUnknownEx = false)`: Checks if a process has exited.
+  
+## Exception Extensions
+
+- `ActualExceptionIs(this Exception ex, Type comparedException)`: Checks if the actual exception type or any of its inner exceptions match the specified type.
+- `ActualExceptionIs<T>(this Exception ex) where T : Exception`: Checks if the actual exception type or any of its inner exceptions match the specified type.
+
+## Encoding Extensions
+
+- `Base64Encode(this string plainText)`: Encodes a string to Base64.
+- `Base64Decode(this string base64EncodedData, bool ifNotBase64StrReturnEncodedData = false)`: Decodes a Base64 encoded string.
+
+## Xml Extensions
+
+- `ReadXmlValue<T>(this XmlDocument doc, string key, T defaultValue = default(T))`: Reads a value from an XML document based on the provided key.
+
+## IDisposable Extensions
+
+- `DisposeAndNull(this IDisposable o)`: Disposes an object and sets it to null.
+
+## Other Extensions
+
+- `ParseGuidList(string data)`: Parses a string and returns a list of Guids.
+
+
 
